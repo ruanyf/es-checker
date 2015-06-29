@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var ReflectSupports = require('es-feature-tests');
 var chalk = require('chalk');
 var api = require('../lib/api');
 var supports = require('../lib/interface');
