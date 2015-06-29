@@ -4,7 +4,7 @@ It is derived from [es-feature-tests](https://github.com/getify/es-feature-tests
 
 ## How to use
 
-(1) Command line
+**(1) Command line**
 
 ```bash
 $ npm install -g es-checker
@@ -13,7 +13,7 @@ $ es-checker
 
 ![](./screenshot.png)
 
-(2) Node.js
+**(2) Node.js**
 
 First install es-checker locally.
 
@@ -35,7 +35,7 @@ if (Supports.letConst) {
 
 The whole Api List please [see below](#api).
 
-(3) Browser
+**(3) Browser**
 
 TODO
 
