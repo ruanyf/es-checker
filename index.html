@@ -116,17 +116,19 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
     }
   }
 
-var rate = parseInt(( pass/total ) * 100);
-var circle = document.querySelector('.c100');
-circle.classList.remove('p0');
-circle.classList.add('p' + rate);
-var circleSpan = document.querySelector('.c100 span');
-circleSpan.innerHTML = rate + '%';
-var h2Span = document.querySelector('fieldset h2 span');
-h2Span.innerHTML = rate + '%';
+window.addEventListener('load', function(event){
+  var rate = parseInt(( pass/total ) * 100);
+  var circle = document.querySelector('.c100');
+  circle.classList.remove('p0');
+  circle.classList.add('p' + rate);
+  var circleSpan = document.querySelector('.c100 span');
+  circleSpan.innerHTML = rate + '%';
+  var h2Span = document.querySelector('fieldset h2 span');
+  h2Span.innerHTML = rate + '%';
 
-var firstSuite = document.querySelector('div[data-role="collapsible-set"]>div');
-firstSuite.setAttribute('data-collapsed', 'false');
+  var firstSuite = document.querySelector('div[data-role="collapsible-set"]>div');
+  firstSuite.setAttribute('data-collapsed', 'false');
+});
 </script>
 </body>
 </html>
