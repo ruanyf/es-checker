@@ -93,6 +93,7 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
     div.setAttribute("data-role", "collapsible");
     div.setAttribute("data-collapsed-icon", "flat-eye");
     div.setAttribute("data-expanded-icon", "flat-eye");
+    if (total === 0) div.setAttribute("data-collapsed", "false");
     div.innerHTML = '<h3>' + title + '</h3>';
     testArray.forEach(function(key){
       if (Supports[key]){
@@ -125,11 +126,6 @@ window.addEventListener('pageshow', function(event){
   circleSpan.innerHTML = rate + '%';
   var h2Span = document.querySelector('fieldset h2 span');
   h2Span.innerHTML = rate + '%';
-
-  setTimeout(function(){
-    var firstSuite = document.querySelector('div[data-role="collapsible-set"]>div');
-    firstSuite.classList.remove('ui-collapsible-collapsed');
-  }, 0);
 });
 </script>
 </body>
