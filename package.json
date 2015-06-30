@@ -1,6 +1,6 @@
 {
   "name": "es-checker",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A feature detection library for ECMAScript in node.js and browser",
   "main": "index.js",
   "scripts": {
