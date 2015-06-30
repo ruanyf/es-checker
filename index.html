@@ -116,7 +116,7 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
     }
   }
 
-window.addEventListener('load', function(event){
+window.addEventListener('pageshow', function(event){
   var rate = parseInt(( pass/total ) * 100);
   var circle = document.querySelector('.c100');
   circle.classList.remove('p0');
