@@ -128,7 +128,7 @@ window.addEventListener('pageshow', function(event){
 
   setTimeout(function(){
     var firstSuite = document.querySelector('div[data-role="collapsible-set"]>div');
-    firstSuite.setAttribute('data-collapsed', 'false');
+    firstSuite.classList.remove('ui-collapsible-collapsed');
   }, 0);
 });
 </script>
