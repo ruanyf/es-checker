@@ -127,8 +127,10 @@ window.addEventListener('pageshow', function(event){
   var h2Span = document.querySelector('fieldset h2 span');
   h2Span.innerHTML = rate + '%';
 
-  var firstSuite = document.querySelector('div[data-role="collapsible-set"]>div');
-  firstSuite.setAttribute('data-collapsed', 'false');
+  setTimeout(function(){
+    var firstSuite = document.querySelector('div[data-role="collapsible-set"]>div');
+    firstSuite.setAttribute('data-collapsed', 'false');
+  }, 0);
 });
 </script>
 </body>
