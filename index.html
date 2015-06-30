@@ -117,7 +117,7 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
     }
   }
 
-window.addEventListener('pageshow', function(event){
+
   var rate = parseInt(( pass/total ) * 100);
   var circle = document.querySelector('.c100');
   circle.classList.remove('p0');
@@ -126,7 +126,7 @@ window.addEventListener('pageshow', function(event){
   circleSpan.innerHTML = rate + '%';
   var h2Span = document.querySelector('fieldset h2 span');
   h2Span.innerHTML = rate + '%';
-});
+
 </script>
 </body>
 </html>
