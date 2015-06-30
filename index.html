@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery.mobile.flatui.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/circle.css" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery.mobile-1.4.0-rc.1.js"></script>
+  <script src="es-checker.js"></script>
+  <style>
+    fieldset{
+      text-align: center;
+    }
+    .c100{
+      float: none;
+      margin:auto;
+    }
+    .c100.big{
+      font-size: 20em;
+    }
+
+    @media screen and (min-device-width: 800px) {
+      main{
+        width: 65%;
+        margin: auto;
+      }
+　  }
+
+  </style>
+</head>
+<body>
+  <div data-role="page">
+
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" title="Home"></a>
+      <h1>ES-Checker <small>(<a style="color:orange;" href="https://github.com/ruanyf/es-checker">Github</a>)</small></h1>
+      <a href="./index.cn.html" onclick="window.location=this.href;">English | Chinese</a></span>
+    </div>
+
+    <main data-role="content" role="main">
+
+<fieldset>
+<div class="c100 p0 big orange">
+  <span>0%</span>
+  <div class="slice">
+    <div class="bar"></div>
+    <div class="fill"></div>
+  </div>
+</div>
+</fieldset>
+
+<fieldset>
+  <h2>Your browser supports <span></span> of ECMAScript 6.</h2>
+</fieldset>
+
+      <div data-role="collapsible-set" data-theme="f" data-content-theme="f">
+      </div>
+
+      </main>
+  <div data-role="footer" data-theme="c" data-content-theme="b">
+    <h4><a style="color:orange;" href="https://github.com/ruanyf/es-checker">ES-Checker</a> by <a style="color:orange;" href="https://github.com/ruanyf">ruanyf</a> @2015</h4>
+  </div>
+</div>
+<script src="assets/mapper.js"></script>
+<script>
+var pass = 0;
+var total = 0;
+
+runSuite('Variables', ['letConst', 'letTDZ', 'constRedef', 'destructuring', 'spreadRest']);
+
+runSuite('Data Types', ['forOf', 'collections', 'symbol', 'symbolImplicitCoercion']);
+
+runSuite('Number', ['numericLiteral', 'oldOctalLiteral', 'mathStatics', 'numberStatics']);
+
+runSuite('String', ['stringMethods', 'unicodeEscape', 'unicodeIdentifier', 'unicodeRegExp', 'stickyRegExp', 'templateString']);
+
+runSuite('Function', ['arrow', 'defaultParameter', 'parameterDestructuring', 'functionNameInference', 'tco']);
+
+runSuite('Array', ['arrayMethods', 'arrayStatics', 'typedArrayMethods', 'typedArrayStatics', 'typedArrays']);
+
+runSuite('Object', ['objectProto', 'objectStatics', 'computedProperty', 'conciseMethodProperty', 'proxy']);
+
+runSuite('Generator and Promise', ['generator', 'promise']);
+
+runSuite('Class', ['class', 'objectSuper', 'extendNatives']);
+
+runSuite('Module', ['moduleExport', 'moduleImport']);
+
+  function runSuite(title, testArray){
+    var divSet = document.querySelector('div[data-role="collapsible-set"]');
+    var div = document.createElement("div");
+    div.setAttribute("data-role", "collapsible");
+    div.setAttribute("data-collapsed-icon", "flat-eye");
+    div.setAttribute("data-expanded-icon", "flat-eye");
+    div.innerHTML = '<h3>' + title + '</h3>';
+    testArray.forEach(function(key){
+      if (Supports[key]){
+        pass += 1;
+        div.innerHTML += '<p style="color:green;">' + ' ✓ ' + (new Array(5)).join('&nbsp;') + getApi(key)['en'] + '</p>';
+      } else {
+        div.innerHTML += '<p style="color:red;">' + ' ✖ ' + (new Array(6)).join('&nbsp;') + getApi(key)['en'] + '</p>';
+      }
+      total += 1;
+    });
+    divSet.appendChild(div);
+  }
+
+  function getApi(key){
+    if (mapper[key]){
+      return mapper[key];
+    } else if (mapper[key[0].toUpperCase() + key.substring(1)]){
+      return mapper[key[0].toUpperCase() + key.substring(1)];
+    } else if (mapper[key.toUpperCase()]){
+      return mapper[key.toUpperCase()];
+    }
+  }
+
+var rate = parseInt(( pass/total ) * 100);
+var circle = document.querySelector('.c100');
+circle.classList.remove('p0');
+circle.classList.add('p' + rate);
+var circleSpan = document.querySelector('.c100 span');
+circleSpan.innerHTML = rate + '%';
+var h2Span = document.querySelector('fieldset h2 span');
+h2Span.innerHTML = rate + '%';
+
+var firstSuite = document.querySelector('div[data-role="collapsible-set"]>div');
+firstSuite.setAttribute('data-collapsed', 'false');
+</script>
+</body>
+</html>

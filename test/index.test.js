@@ -14,4 +14,8 @@ describe('es-checker test',function(){
     var value = supports.ArrayMethods;
     expect(supports.ArrayMethods).to.equal(supports.arrayMethods);
   })
+
+  it('should support Promise', function(){
+    expect(supports.promise).to.equal(true);
+  })
 });
