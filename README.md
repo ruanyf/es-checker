@@ -1,6 +1,4 @@
-ES-Checker is a feature detection library for ECMAScript in node.js and browser.
-
-It is derived from [es-feature-tests](https://github.com/getify/es-feature-tests). Please visit [demo](http://ruanyf.github.io/es-checker/).
+ES-Checker is a feature detection library for ECMAScript in node.js and browser. Please visit [demo](http://ruanyf.github.io/es-checker/).
 
 ## How to use
 
@@ -59,7 +57,7 @@ The whole API List please [see below](#api).
 
 ## API
 
-Copied from [FeatureTests.io](https://featuretests.io/details).
+This library is derived from [es-feature-tests](https://github.com/getify/es-feature-tests). The following API is copied from it. Visit [FeatureTests.io](https://featuretests.io/details) for more information, including how to test a feature by yourself.
 
 - **letConst**: let and const
 - **defaultParameter**: default function parameter values
