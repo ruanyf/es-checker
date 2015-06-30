@@ -7,6 +7,7 @@ var mapper = require('../lib/mapper');
 var language = require('../package.json').language;
 var runTest = require('../lib/runtest');
 
+var version = require('../package.json').version;
 var pass = 0;
 var total = 0;
 
@@ -18,7 +19,7 @@ var symbols = {
 
 supports._api = api;
 
-console.log('\n' + chalk.bold.underline('ECMAScript 6 Feature Detection') + '\n');
+console.log('\n' + chalk.bold.underline('ECMAScript 6 Feature Detection' + ' (v' + version + ')') + '\n');
 
 runSuite('Variables', ['letConst', 'letTDZ', 'constRedef', 'destructuring', 'spreadRest']);
 

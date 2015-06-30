@@ -1,10 +1,10 @@
 ES-Checker is a feature detection library for ECMAScript in node.js and browser.
 
-It is derived from [es-feature-tests](https://github.com/getify/es-feature-tests). Please check [FeatureTests.io](https://featuretests.io/mybrowser) first.
+It is derived from [es-feature-tests](https://github.com/getify/es-feature-tests). Please visit [demo](http://ruanyf.github.io/es-checker/).
 
 ## How to use
 
-**(1) Command line**
+### Command line
 
 ```bash
 $ npm install -g es-checker
@@ -13,7 +13,7 @@ $ es-checker
 
 ![](./screenshot.png)
 
-**(2) Node.js**
+### Node.js
 
 First install es-checker locally.
 
@@ -35,9 +35,27 @@ if (Supports.letConst) {
 
 The whole Api List please [see below](#api).
 
-**(3) Browser**
+### Browser
 
-TODO
+First insert es-checker.js into your page.
+
+```html
+<script src="http://ruanyf.github.io/es-checker/es-checker.js"></script>
+```
+
+Then use `Supports` to decide which feature to use. Visit [demo](http://ruanyf.github.io/es-checker/).
+
+```html
+<script>
+if (Supports.letConst) {
+  let x = 5;
+} else {
+  var x = 5;
+}
+</script>
+```
+
+The whole API List please [see below](#api).
 
 ## API
 
