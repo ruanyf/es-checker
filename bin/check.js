@@ -20,7 +20,7 @@ supports._api = api;
 
 console.log('\n' + chalk.bold.underline('ECMAScript 6 Feature Detection') + '\n');
 
-runSuite('Varibles', ['letConst', 'letTDZ', 'constRedef', 'destructuring', 'spreadRest']);
+runSuite('Variables', ['letConst', 'letTDZ', 'constRedef', 'destructuring', 'spreadRest']);
 
 runSuite('Data Types', ['forOf', 'collections', 'symbol', 'symbolImplicitCoercion']);
 
@@ -43,7 +43,7 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
 function runSuite(title, testArray){
   console.log(chalk.bold(title));
   testArray.forEach(function(key){
-    var key = getApiName(key);
+    key = getApiName(key);
     var result = runTest(key);
     var symbol;
     var color;
@@ -61,9 +61,9 @@ function runSuite(title, testArray){
   console.log('');
 }
 
-var string1 = 'Passes ' + pass + ' feature Dectations'
-var string2 = 'Your runtime supports '
-  + parseInt((pass/total)*100) +  '% of ECMAScript 6';
+var string1 = 'Passes ' + pass + ' feature Dectations';
+var string2 = 'Your runtime supports ' +
+  parseInt((pass/total)*100) +  '% of ECMAScript 6';
 var length = Math.max(string1.length, string2.length);
 
 console.log('\n' + (new Array(length + 1)).join('='));
