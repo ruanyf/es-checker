@@ -1,9 +1,11 @@
-var circleDiv = document.querySelector('.c100');
+var circleField = document.querySelector('#circle');
 
-circleDiv.innerHTML = '  <span>0%</span>' +
+circleField.innerHTML = '<div class="c100 p0 big orange">' +
+  '  <span>0%</span>' +
   '<div class="slice">' +
   '  <div class="bar"></div>' +
   '  <div class="fill"></div>' +
+  '</div>' +
   '</div>';
 
 var pass = 0;
