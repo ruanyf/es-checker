@@ -1,3 +1,11 @@
+var circleDiv = document.querySelector('.c100');
+
+circleDiv.innerHTML = '  <span>0%</span>' +
+  '<div class="slice">' +
+  '  <div class="bar"></div>' +
+  '  <div class="fill"></div>' +
+  '</div>';
+
 var pass = 0;
 var total = 0;
 
@@ -32,9 +40,9 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
     testArray.forEach(function(key){
       if (Supports[key]){
         pass += 1;
-        div.innerHTML += '<p style="color:green;">' + ' ✓ ' + (new Array(5)).join('&nbsp;') + getApi(key)['en'] + '</p>';
+        div.innerHTML += '<p style="color:green;">' + ' ✓ ' + (new Array(5)).join('&nbsp;') + getApi(key).en + '</p>';
       } else {
-        div.innerHTML += '<p style="color:red;">' + ' ✖ ' + (new Array(6)).join('&nbsp;') + getApi(key)['en'] + '</p>';
+        div.innerHTML += '<p style="color:red;">' + ' ✖ ' + (new Array(6)).join('&nbsp;') + getApi(key).en + '</p>';
       }
       total += 1;
     });
