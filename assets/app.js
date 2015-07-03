@@ -8,6 +8,12 @@ circleField.innerHTML = '<div class="c100 p0 big orange">' +
   '</div>' +
   '</div>';
 
+var circleField = document.querySelector('#circle-title');
+circleField.innerHTML = '  <h2>Your browser supports <span></span> of ECMAScript 6.</h2>';
+
+var footer = document.querySelector('div[data-role="footer"]');
+footer.innerHTML = '<h4><a style="color:orange;" href="https://github.com/ruanyf/es-checker">ES-Checker</a> by <a style="color:orange;" href="https://github.com/ruanyf">ruanyf</a> @2015</h4>';
+
 var pass = 0;
 var total = 0;
 
