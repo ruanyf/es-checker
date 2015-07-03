@@ -11,12 +11,14 @@ circleField.innerHTML = '<div class="c100 p0 big orange">' +
 var circleField = document.querySelector('#circle-title');
 circleField.innerHTML = '  <h2>Your browser supports <span></span> of ECMAScript 6.</h2>';
 
+/*
 var main = document.querySelector('main');
 var div = document.createElement("div");
 div.setAttribute("data-role", "collapsible-set");
 div.setAttribute("data-theme", "f");
 div.setAttribute("data-content-theme", "f");
 main.appendChild(div);
+*/
 
 var header = document.querySelector('div[data-role="header"]');
 header.innerHTML = '      <a data-iconpos="notext" data-role="button" title="Home"></a>' +
