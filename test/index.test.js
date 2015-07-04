@@ -10,9 +10,17 @@ describe('es-checker test',function(){
     expect(supports.unknown).to.equal(undefined);
   });
 
+  it('should detect Reflect feature', function(){
+    expect(supports.reflect).to.be.a('boolean');
+  });
+
   it('first letter of some feature name should be caseignored', function(){
     var value = supports.ArrayMethods;
     expect(supports.ArrayMethods).to.equal(supports.arrayMethods);
+  });
+
+  it('should support Promise', function(){
+    expect(supports.promise).to.equal(true);
   });
 
   it('class should be equal of classes', function(){
