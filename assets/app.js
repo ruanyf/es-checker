@@ -83,4 +83,4 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
   var h2Span = document.querySelector('fieldset h2 span');
   h2Span.innerHTML = rate + '%';
 
-  document.title = title;
+  setTimeout(function(){document.title = title;}, 0);
