@@ -1,3 +1,4 @@
+
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var supports = require('../lib/interface');
 var api = require('../lib/api');
@@ -32,6 +33,7 @@ var api = {
   numericLiteral: { passes: "'use strict'; var a = 0o1, b = 0b10;" },
   oldOctalLiteral: { passes: "var a = 01;" },
   symbol: { passes: "'use strict'; var a = Symbol('b');" },
+  symbolImplicitCoercion: { dependencies: ["symbol"], fails: "'use strict'; var a = Symbol('a'); a + '';" },
   unicodeEscape: { passes: "'use strict'; var a = '\\u{20BB7}';" },
   unicodeIdentifier: { passes: "'use strict'; var \\u{20BB7};" },
   unicodeRegExp: { passes: "'use strict'; var a = /\\u{20BB7}/u;" },
@@ -43,7 +45,6 @@ var api = {
   objectSuper: { passes: "'use strict'; var a = { b: 2 }, c = { d() { return super.b; } }; Object.setPrototypeOf(c,a); if (c.d() !== 2) throw 0;" },
   extendNatives: { dependencies: ["class"], passes: "'use strict'; class Foo extends Array { }; var a = new Foo(); a.push(1,2,3); if (a.length !== 3) throw 0;" },
   TCO: { passes: "'use strict'; +function a(b){ if (b<6E4) a(b+1); }(0);" },
-  symbolImplicitCoercion: { fails: "'use strict'; var a = Symbol('a'); a + '';" },
   functionNameInference: { passes: "'use strict'; var a = { b: function(){} }; if (a.name != 'b') throw 0;" },
   ObjectStatics: { is: "'use strict'; return ('getOwnSymbolNames' in Object) && ('assign' in Object) && ('is' in Object);" },
   ArrayStatics: { is: "'use strict'; return ('from' in Array) && ('of' in Array);" },
@@ -56,7 +57,8 @@ var api = {
   MathStatics: { is: "'use strict'; return ('hypot' in Math) && ('acosh' in Math) && ('imul' in Math);" },
   collections: { is: "'use strict'; return ('Map' in global) && ('Set' in global) && ('WeakMap' in global) && ('WeakSet' in global);" },
   Proxy: { is: "'use strict'; return ('Proxy' in global);" },
-  Promise: { is: "'use strict'; return ('Promise' in global);"}
+  Promise: { is: "'use strict'; return ('Promise' in global);"},
+  Reflect: { is: "'use strict'; return ('Reflect' in global);" },
 };
 
 module.exports = api;
@@ -73,6 +75,7 @@ var Supports = function(){
   this.forOf = 'forOf';
   this.collections = 'collections';
   this.symbol = 'symbol';
+  this.Symbol = this.symbol;
   this.symbolImplicitCoercion = 'symbolImplicitCoercion';
   // Number
   this.numericLiteral = 'numericLiteral';
@@ -115,6 +118,8 @@ var Supports = function(){
   this.conciseMethodProperty = 'conciseMethodProperty';
   this.Proxy = 'Proxy';
   this.proxy = this.Proxy;
+  this.Reflect = 'Reflect';
+  this.reflect = this.Reflect;
   // Generator and Promise
   this.generator = 'generator';
   this.Promise = 'Promise';
@@ -182,3 +187,4 @@ function runIt(code) {
 module.exports =  runTest;
 
 },{"./api":2}]},{},[1]);
+
