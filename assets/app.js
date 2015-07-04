@@ -1,3 +1,4 @@
+var title = document.title;
 var circleField = document.querySelector('#circle');
 
 circleField.innerHTML = '<div class="c100 p0 big orange">' +
@@ -82,3 +83,4 @@ runSuite('Module', ['moduleExport', 'moduleImport']);
   var h2Span = document.querySelector('fieldset h2 span');
   h2Span.innerHTML = rate + '%';
 
+  document.title = title;
