@@ -34,7 +34,7 @@ runSuite('Function', ['arrow', 'defaultParameter', 'parameterDestructuring', 'fu
 
 runSuite('Array', ['arrayMethods', 'arrayStatics', 'typedArrayMethods', 'typedArrayStatics', 'typedArrays']);
 
-runSuite('Object', ['objectProto', 'objectStatics', 'computedProperty', 'conciseMethodProperty', 'proxy']);
+runSuite('Object', ['objectProto', 'objectStatics', 'computedProperty', 'conciseMethodProperty', 'proxy', 'reflect']);
 
 runSuite('Generator and Promise', ['generator', 'promise']);
 
