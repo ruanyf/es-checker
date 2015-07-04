@@ -9,7 +9,7 @@ circleField.innerHTML = '<div class="c100 p0 big orange">' +
   '</div>';
 
 var circleField = document.querySelector('#circle-title');
-circleField.innerHTML = '  <h2>Your browser supports <span></span> of ECMAScript 6.</h2>';
+circleField.innerHTML = '  <h2>您的浏览器支持<span></span>的 ECMAScript 6。</h2>';
 
 var header = document.querySelector('div[data-role="header"]');
 header.innerHTML = '      <a data-iconpos="notext" data-role="button" title="Home"></a>' +
