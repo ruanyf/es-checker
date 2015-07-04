@@ -100,6 +100,7 @@ This library is derived from [es-feature-tests](https://github.com/getify/es-fea
 - **collections**: Collections added (Map, Set, WeakMap, WeakSet)
 - **proxy**: Proxies
 - **promise**: Promises
+- **reflect**: Reflect
 
 ## Licensed
 
