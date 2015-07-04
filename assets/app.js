@@ -32,7 +32,7 @@ runSuite('String', ['stringMethods', 'unicodeEscape', 'unicodeIdentifier', 'unic
 
 runSuite('Function', ['arrow', 'defaultParameter', 'parameterDestructuring', 'functionNameInference', 'tco']);
 
-runSuite('Array', ['arrayMethods', 'arrayStatics', 'typedArrayMethods', 'typedArrayStatics', 'typedArrays']);
+runSuite('Array', ['arrayMethods', 'arrayStatics', 'typedArrays', 'typedArrayMethods', 'typedArrayStatics']);
 
 runSuite('Object', ['objectProto', 'objectStatics', 'computedProperty', 'conciseMethodProperty', 'proxy', 'reflect']);
 
