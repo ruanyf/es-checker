@@ -14,7 +14,7 @@ circleField.innerHTML = '  <h2>Your browser supports <span></span> of ECMAScript
 var header = document.querySelector('div[data-role="header"]');
 header.innerHTML = '      <a data-iconpos="notext" data-role="button" title="Home"></a>' +
   '    <h1>ES-Checker <small>(<a style="color:orange;" href="https://github.com/ruanyf/es-checker">Github</a>)</small></h1>' +
-  '    <a href="#" onclick="document.location=\'http://ruanyf.github.io/es-checker/index.cn.html\';">English | Chinese</a>';
+  '    <a href="#" onclick="document.location=\'http://ruanyf.github.io/es-checker/index.cn.html\';">英文 | 中文</a>';
 
 var footer = document.querySelector('div[data-role="footer"]');
 footer.innerHTML = '<h4><a style="color:orange;" href="https://github.com/ruanyf/es-checker">ES-Checker</a> by <a style="color:orange;" href="https://github.com/ruanyf">ruanyf</a> @2015</h4>';
