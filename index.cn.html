@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="assets/css/jquery.mobile.flatui.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/circle.css" />
+  <title>你的浏览器支持 ES6 吗？ - ES-Checker</title>
   <style>
     fieldset{
       text-align: center;
+      border: none;
     }
     .c100{
       float: none;
@@ -28,44 +30,25 @@
 </head>
 <body>
   <div data-role="page">
-
-    <div data-role="header">
-      <a data-iconpos="notext" data-role="button" title="Home"></a>
-      <h1>ES-Checker <small>(<a style="color:orange;" href="https://github.com/ruanyf/es-checker">Github</a>)</small></h1>
-      <a href="#" onclick="document.location='http://ruanyf.github.io/es-checker/index.html';">英文 | 中文</a>
-    </div>
-
+    <div data-role="header"></div>
     <main data-role="content" role="main">
-
-<fieldset>
-<div class="c100 p0 big orange">
-  <span>0%</span>
-  <div class="slice">
-    <div class="bar"></div>
-    <div class="fill"></div>
-  </div>
-</div>
-</fieldset>
-
-<fieldset>
-  <h2>您的浏览器支持 <span></span> 的ECMAScript 6。</h2>
-</fieldset>
-
-      <div data-role="collapsible-set" data-theme="f" data-content-theme="f">
-      </div>
-
-      </main>
-  <div data-role="footer" data-theme="c" data-content-theme="b">
-    <h4><a style="color:orange;" href="https://github.com/ruanyf/es-checker">ES-Checker</a> by <a style="color:orange;" href="https://github.com/ruanyf">ruanyf</a> @2015</h4>
+      <fieldset id="circle"></fieldset>
+      <fieldset id="circle-title">
+        <img src="assets/loading.svg"  width="128" height="128" />
+        <h3>加载中...</h3>
+      </fieldset>
+      <div data-role="collapsible-set" data-theme="f" data-content-theme="f"></div>
+    </main>
+    <div data-role="footer" data-theme="c" data-content-theme="b">
   </div>
 </div>
 <script>
 var scripts = [
+  "assets/js/jquery.js",
+  "assets/js/jquery.mobile-1.4.0-rc.1.js",
   "es-checker.js",
   "assets/mapper.js",
-  "assets/app.cn.js",
-  "assets/js/jquery.js",
-  "assets/js/jquery.mobile-1.4.0-rc.1.js"
+  "assets/app.cn.js"
 ];
 scripts.forEach(function(src) {
   var script = document.createElement('script');
