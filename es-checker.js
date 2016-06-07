@@ -50,7 +50,7 @@ var api = {
   ArrayStatics: { is: "'use strict'; return ('from' in Array) && ('of' in Array);" },
   ArrayMethods: { is: "'use strict'; return ('fill' in Array.prototype) && ('find' in Array.prototype) && ('findIndex' in Array.prototype) && ('entries' in Array.prototype) && ('keys' in Array.prototype) && ('values' in Array.prototype);" },
   TypedArrays: { is: "'use strict'; return ('ArrayBuffer' in global) && ('Int8Array' in global) && ('Uint8Array' in global) && ('Int32Array' in global) && ('Float64Array' in global);" },
-  TypedArrayStatics: { dependencies: ["TypedArrays"], is: "use strict'; return ('from' in Uint32Array) && ('of' in Uint32Array);" },
+  TypedArrayStatics: { dependencies: ["TypedArrays"], is: "'use strict'; return ('from' in Uint32Array) && ('of' in Uint32Array);" },
   TypedArrayMethods: { dependencies: ["TypedArrays"], is: "'use strict'; var x = new Int8Array(1); return ('slice' in x) && ('join' in x) && ('map' in x) && ('forEach' in x);" },
   StringMethods: { is: "'use strict'; return ('includes' in String.prototype) && ('repeat' in String.prototype);" },
   NumberStatics: { is: "'use strict'; return ('isNaN' in Number) && ('isInteger' in Number);" },
