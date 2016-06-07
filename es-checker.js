@@ -45,7 +45,7 @@ var api = {
   objectSuper: { passes: "'use strict'; var a = { b: 2 }, c = { d() { return super.b; } }; Object.setPrototypeOf(c,a); if (c.d() !== 2) throw 0;" },
   extendNatives: { dependencies: ["class"], passes: "'use strict'; class Foo extends Array { }; var a = new Foo(); a.push(1,2,3); if (a.length !== 3) throw 0;" },
   TCO: { passes: "'use strict'; +function a(b){ if (b<6E4) a(b+1); }(0);" },
-  functionNameInference: { passes: "'use strict'; var a = { b: function(){} }; if (a.name != 'b') throw 0;" },
+  functionNameInference: { passes: "'use strict'; var a = { b: function(){} }; if (a.b.name != 'b') throw 0;" },
   ObjectStatics: { is: "'use strict'; return ('getOwnSymbolNames' in Object) && ('assign' in Object) && ('is' in Object);" },
   ArrayStatics: { is: "'use strict'; return ('from' in Array) && ('of' in Array);" },
   ArrayMethods: { is: "'use strict'; return ('fill' in Array.prototype) && ('find' in Array.prototype) && ('findIndex' in Array.prototype) && ('entries' in Array.prototype) && ('keys' in Array.prototype) && ('values' in Array.prototype);" },
