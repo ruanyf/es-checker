@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "build": "browserify index.js -o es-checker.js"
+    "build": "browserify assets/origin.js -o es-checker.js && browserify assets/mapper.origin.js -o assets/mapper.js"
   },
   "bin": {
     "es-checker": "./bin/check.js"

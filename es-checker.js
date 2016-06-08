@@ -1,21 +1,17 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var supports = require('./lib/interface');
-var api = require('./lib/api');
-var runTest = require('./lib/runtest');
+var supports = require('../lib/interface');
+var api = require('../lib/api');
+var runTest = require('../lib/runtest');
 
-for (var key in supports) {
-  supports[key] = runTest(getApiName(key));
+global = window;
+for (var key in supports){
+  supports[key] = runTest(supports[key]);
 }
 
 supports._api = api;
+window.Supports = supports;
 
-function getApiName(key) {
-  return supports[key];
-}
-
-module.exports = supports;
-
-},{"./lib/api":2,"./lib/interface":3,"./lib/runtest":4}],2:[function(require,module,exports){
+},{"../lib/api":2,"../lib/interface":3,"../lib/runtest":4}],2:[function(require,module,exports){
 var api = {
   letConst: { passes: "'use strict'; let a; const b = 2;" },
   letLoop: { passes: "'use strict'; for(let i in {}){}; for(let i=0;;){break}" },
@@ -53,7 +49,7 @@ var api = {
   ArrayStatics: { is: "'use strict'; return ('from' in Array) && ('of' in Array);" },
   ArrayMethods: { is: "'use strict'; return ('fill' in Array.prototype) && ('find' in Array.prototype) && ('findIndex' in Array.prototype) && ('entries' in Array.prototype) && ('keys' in Array.prototype) && ('values' in Array.prototype);" },
   TypedArrays: { is: "'use strict'; return ('ArrayBuffer' in global) && ('Int8Array' in global) && ('Uint8Array' in global) && ('Int32Array' in global) && ('Float64Array' in global);" },
-  TypedArrayStatics: { dependencies: ["TypedArrays"], is: "'use strict'; return ('from' in Uint32Array) && ('of' in Uint32Array);" },
+  TypedArrayStatics: { dependencies: ["TypedArrays"], is: "use strict'; return ('from' in Uint32Array) && ('of' in Uint32Array);" },
   TypedArrayMethods: { dependencies: ["TypedArrays"], is: "'use strict'; var x = new Int8Array(1); return ('slice' in x) && ('join' in x) && ('map' in x) && ('forEach' in x);" },
   StringMethods: { is: "'use strict'; return ('includes' in String.prototype) && ('repeat' in String.prototype);" },
   NumberStatics: { is: "'use strict'; return ('isNaN' in Number) && ('isInteger' in Number);" },
