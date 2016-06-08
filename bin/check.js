@@ -62,7 +62,7 @@ function runSuite(title, testArray){
   console.log('');
 }
 
-var string1 = 'Passes ' + pass + ' feature Dectations';
+var string1 = 'Passes ' + pass + ' feature Detections';
 var string2 = 'Your runtime supports ' +
   parseInt((pass/total)*100) +  '% of ECMAScript 6';
 var length = Math.max(string1.length, string2.length);
