@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "build": "browserify public/assets/origin.js -o es-checker.js && cp -f es-checker.js public && browserify public/assets/mapper.origin.js -o public/assets/mapper.js && cp -rf public dist",
-    "pages": "gh-pages -d dist"
+    "pages": "gh-pages -d dist",
+    "prepublish": "npm run build && npm run pages && rm -rf dist"
   },
   "bin": {
     "es-checker": "./bin/check.js"
