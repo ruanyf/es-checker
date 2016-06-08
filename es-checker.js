@@ -1,17 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var supports = require('../lib/interface');
-var api = require('../lib/api');
-var runTest = require('../lib/runtest');
-
-global = window;
-for (var key in supports){
-  supports[key] = runTest(supports[key]);
-}
-
-supports._api = api;
-window.Supports = supports;
-
-},{"../lib/api":2,"../lib/interface":3,"../lib/runtest":4}],2:[function(require,module,exports){
 var api = {
   letConst: { passes: "'use strict'; let a; const b = 2;" },
   letLoop: { passes: "'use strict'; for(let i in {}){}; for(let i=0;;){break}" },
@@ -62,7 +49,7 @@ var api = {
 
 module.exports = api;
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 var Supports = function(){
   // Variables
   this.letConst = 'letConst';
@@ -135,7 +122,7 @@ var Supports = function(){
 
 module.exports = new Supports();
 
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var api = require('./api');
 var supports = {};
 supports._api = api;
@@ -185,4 +172,17 @@ function runIt(code) {
 
 module.exports =  runTest;
 
-},{"./api":2}]},{},[1]);
+},{"./api":1}],4:[function(require,module,exports){
+var supports = require('../../lib/interface');
+var api = require('../../lib/api');
+var runTest = require('../../lib/runtest');
+
+global = window;
+for (var key in supports){
+  supports[key] = runTest(supports[key]);
+}
+
+supports._api = api;
+window.Supports = supports;
+
+},{"../../lib/api":1,"../../lib/interface":2,"../../lib/runtest":3}]},{},[4]);

@@ -1,2 +1,2 @@
-var mapper = require('../lib/mapper');
+var mapper = require('../../lib/mapper');
 window.mapper =  mapper;
