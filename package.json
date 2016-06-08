@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "build": "browserify index.js -o es-checker.js"
+    "build": "browserify public/assets/origin.js -o es-checker.js && cp -f es-checker.js public && browserify public/assets/mapper.origin.js -o public/assets/mapper.js && cp -rf public dist",
+    "pages": "gh-pages -d dist"
   },
   "bin": {
     "es-checker": "./bin/check.js"
@@ -33,6 +34,7 @@
   },
   "language": "en",
   "devDependencies": {
-    "browserify": "^13.0.1"
+    "browserify": "^13.0.1",
+    "gh-pages": "^0.11.0"
   }
 }
