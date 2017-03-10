@@ -17,7 +17,7 @@ var api = {
   moduleImport: { passes: "'use strict'; import {a} from 'b';" },
   classes: { passes: "'use strict'; class Foo {}; class Bar extends Foo {};" },
   numericLiteral: { passes: "'use strict'; var a = 0o1, b = 0b10;" },
-  oldOctalLiteral: { passes: "var a = 01;" },
+  oldOctalLiteral: { fails: "'use strict'; var a = 01;" },
   symbol: { passes: "'use strict'; var a = Symbol('b');" },
   symbolImplicitCoercion: { dependencies: ["symbol"], fails: "'use strict'; var a = Symbol('a'); a + '';" },
   unicodeEscape: { passes: "'use strict'; var a = '\\u{20BB7}';" },
