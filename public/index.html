@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery.mobile.flatui.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/circle.css" />
+  <title>How Much of ECMAScript 6 Does Your Browser Support? - ES-Checker</title>
+  <style>
+    fieldset{
+      text-align: center;
+      border: none;
+    }
+    .c100{
+      float: none;
+      margin:auto;
+    }
+    .c100.big{
+      font-size: 20em;
+    }
+
+    @media screen and (min-device-width: 800px) {
+      main{
+        width: 65%;
+        margin: auto;
+      }
+　  }
+
+  </style>
+</head>
+<body>
+  <div data-role="page">
+    <div data-role="header"></div>
+    <main data-role="content" role="main">
+      <fieldset id="circle"></fieldset>
+      <fieldset id="circle-title">
+<img src="data:image/gif;base64,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" />
+      </fieldset>
+      <div data-role="collapsible-set" data-theme="f" data-content-theme="f"></div>
+    </main>
+    <div data-role="footer" data-theme="c" data-content-theme="b">
+  </div>
+</div>
+<script>
+var scripts = [
+  "assets/js/jquery.js",
+  "assets/js/jquery.mobile-1.4.0-rc.1.js",
+  "es-checker.js",
+  "assets/mapper.js",
+  "assets/app.js"
+];
+scripts.forEach(function(src) {
+  var script = document.createElement('script');
+  if (navigator.userAgent.indexOf('firefox') !== -1 ||
+      navigator.userAgent.indexOf('Firefox') !== -1) {
+    script.type = "application/javascript;version=1.7";
+  }
+  script.src = src;
+  script.async = false;
+  document.body.appendChild(script);
+});
+</script>
+</body>
+</html>
